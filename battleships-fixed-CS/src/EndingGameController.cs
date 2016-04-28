@@ -6,8 +6,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using SwinGameSDK;
 
-
-
 /// <summary>
 /// The EndingGameController is responsible for managing the interactions at the end
 /// of a game.

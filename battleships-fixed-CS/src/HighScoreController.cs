@@ -7,8 +7,6 @@ using System.Diagnostics;
 using System.IO;
 using SwinGameSDK;
 
-
-
 /// <summary>
 /// Controls displaying and collecting high score data.
 /// </summary>

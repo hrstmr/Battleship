@@ -1,12 +1,11 @@
 
+
 using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using SwinGameSDK;
-
-
 
 /// <summary>
 /// This includes a number of utility methods for
@@ -137,6 +136,7 @@ static class UtilityFunctions
 				draw = true;
 
 				switch (grid[row, col]) {
+					//If small Then fillColor = _SMALL_SHIP Else fillColor = _LARGE_SHIP
 					case TileView.Miss:
 						if (small)
 							fillColor = SMALL_MISS;
@@ -149,6 +149,7 @@ static class UtilityFunctions
 						else
 							fillColor = LARGE_HIT;
 						break;
+					case TileView.Sea:
 					case TileView.Ship:
 						if (small)
 							fillColor = SMALL_SEA;

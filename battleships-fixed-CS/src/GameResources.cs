@@ -9,6 +9,19 @@ using SwinGameSDK;
 public static class GameResources
 {
 
+	private static Dictionary<string, Bitmap> _Images = new Dictionary<string, Bitmap>();
+	private static Dictionary<string, Font> _Fonts = new Dictionary<string, Font>();
+	private static Dictionary<string, SoundEffect> _Sounds = new Dictionary<string, SoundEffect>();
+
+	private static Dictionary<string, Music> _Music = new Dictionary<string, Music>();
+	private static Bitmap _Background;
+	private static Bitmap _Animation;
+	private static Bitmap _LoaderFull;
+	private static Bitmap _LoaderEmpty;
+	private static Font _LoadingFont;
+
+	private static SoundEffect _StartSound;
+
 	private static void LoadFonts()
 	{
 		NewFont("ArialLarge", "arial.ttf", 80);
@@ -104,18 +117,6 @@ public static class GameResources
 		return _Music[music];
 	}
 
-	private static Dictionary<string, Bitmap> _Images = new Dictionary<string, Bitmap>();
-	private static Dictionary<string, Font> _Fonts = new Dictionary<string, Font>();
-	private static Dictionary<string, SoundEffect> _Sounds = new Dictionary<string, SoundEffect>();
-
-	private static Dictionary<string, Music> _Music = new Dictionary<string, Music>();
-	private static Bitmap _Background;
-	private static Bitmap _Animation;
-	private static Bitmap _LoaderFull;
-	private static Bitmap _LoaderEmpty;
-	private static Font _LoadingFont;
-
-	private static SoundEffect _StartSound;
 	/// <summary>
 	/// The Resources Class stores all of the Games Media Resources, such as Images, Fonts
 	/// Sounds, Music.
@@ -273,6 +274,7 @@ public static class GameResources
 
 	private static void FreeImages()
 	{
+		//Bitmap obj = default(Bitmap);
 		foreach (Bitmap obj in _Images.Values) {
 			SwinGame.FreeBitmap(obj);
 		}
@@ -280,6 +282,7 @@ public static class GameResources
 
 	private static void FreeSounds()
 	{
+		//SoundEffect obj = default(SoundEffect);
 		foreach (SoundEffect obj in _Sounds.Values) {
 			Audio.FreeSoundEffect(obj);
 		}
@@ -287,6 +290,7 @@ public static class GameResources
 
 	private static void FreeMusic()
 	{
+		//Music obj = default(Music);
 		foreach (Music obj in _Music.Values) {
 			Audio.FreeMusic(obj);
 		}

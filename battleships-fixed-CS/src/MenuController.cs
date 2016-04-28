@@ -6,8 +6,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using SwinGameSDK;
 
-
-
 /// <summary>
 /// The menu controller handles the drawing and user interactions
 /// from the menus in the game. These include the main menu, game
@@ -264,16 +262,16 @@ static class MenuController
 	{
 		switch (button) {
 			case MAIN_MENU_PLAY_BUTTON:
-			GameController.StartGame();
+				GameController.StartGame();
 				break;
 			case MAIN_MENU_SETUP_BUTTON:
-			GameController.AddNewState(GameState.AlteringSettings);
+				GameController.AddNewState(GameState.AlteringSettings);
 				break;
 			case MAIN_MENU_TOP_SCORES_BUTTON:
-			GameController.AddNewState(GameState.ViewingHighScores);
+				GameController.AddNewState(GameState.ViewingHighScores);
 				break;
 			case MAIN_MENU_QUIT_BUTTON:
-			GameController.EndCurrentState();
+				GameController.EndCurrentState();
 				break;
 		}
 	}
@@ -286,13 +284,13 @@ static class MenuController
 	{
 		switch (button) {
 			case SETUP_MENU_EASY_BUTTON:
-			GameController.SetDifficulty(AIOption.Hard);
+				GameController.SetDifficulty(AIOption.Hard);
 				break;
 			case SETUP_MENU_MEDIUM_BUTTON:
-			GameController.SetDifficulty(AIOption.Hard);
+				GameController.SetDifficulty(AIOption.Hard);
 				break;
 			case SETUP_MENU_HARD_BUTTON:
-			GameController.SetDifficulty(AIOption.Hard);
+				GameController.SetDifficulty(AIOption.Hard);
 				break;
 		}
 		//Always end state - handles exit button as well
@@ -307,16 +305,16 @@ static class MenuController
 	{
 		switch (button) {
 			case GAME_MENU_RETURN_BUTTON:
-			GameController.EndCurrentState();
+				GameController.EndCurrentState();
 				break;
 			case GAME_MENU_SURRENDER_BUTTON:
-			GameController.EndCurrentState();
+				GameController.EndCurrentState();
 				//end game menu
-			GameController.EndCurrentState();
+				GameController.EndCurrentState();
 				//end game
 				break;
 			case GAME_MENU_QUIT_BUTTON:
-			GameController.AddNewState(GameState.Quitting);
+				GameController.AddNewState(GameState.Quitting);
 				break;
 		}
 	}
