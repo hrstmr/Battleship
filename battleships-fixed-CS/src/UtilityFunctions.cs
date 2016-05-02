@@ -222,6 +222,11 @@ static class UtilityFunctions
 		SwinGame.DrawText(Message, MESSAGE_COLOR, GameResources.GameFont("Courier"), FIELD_LEFT, MESSAGE_TOP);
 	}
 
+    public static void DrawHints()
+    {   
+        SwinGame.DrawText("To return the main menu, press [ESC]", MESSAGE_COLOR, GameResources.GameFont("Courier"), FIELD_LEFT, MESSAGE_TOP);
+    }
+
 	/// <summary>
 	/// Draws the background for the current state of the game
 	/// </summary>
