@@ -58,11 +58,12 @@ static class DiscoveryController
 	/// </summary>s
 	public static void DrawDiscovery()
 	{
+		//Possition of numbers was changed to fit improved text size
 		const int SCORES_LEFT = 172;
-		const int SHOTS_TOP = 157;
-		const int HITS_TOP = 206;
-		const int SPLASH_TOP = 256;
-		const int SPLASH_BOTTOM = 306;
+		const int SHOTS_TOP = 154;
+		const int HITS_TOP = 205;
+		const int SPLASH_TOP = 255;
+		const int SPLASH_BOTTOM = 302;
 
 		if ((SwinGame.KeyDown(KeyCode.vk_LSHIFT) | SwinGame.KeyDown(KeyCode.vk_RSHIFT)) & SwinGame.KeyDown(KeyCode.vk_c)) {
 			UtilityFunctions.DrawField(GameController.HumanPlayer.EnemyGrid, GameController.ComputerPlayer, true);
@@ -73,10 +74,11 @@ static class DiscoveryController
 		UtilityFunctions.DrawSmallField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer);
 		UtilityFunctions.DrawMessage();
 
-		SwinGame.DrawText(GameController.HumanPlayer.Shots.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, SHOTS_TOP);
-		SwinGame.DrawText(GameController.HumanPlayer.Hits.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, HITS_TOP);
-		SwinGame.DrawText(GameController.HumanPlayer.Missed.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, SPLASH_TOP);
-		SwinGame.DrawText(GameController.HumanPlayer.Score.ToString(), Color.White, GameResources.GameFont("Menu"), SCORES_LEFT, SPLASH_BOTTOM);
+		//Applying new font style for Shots, Hits, Missed and new feature - Score
+		SwinGame.DrawText(GameController.HumanPlayer.Shots.ToString(), Color.White, GameResources.GameFont("Score"), SCORES_LEFT, SHOTS_TOP);
+		SwinGame.DrawText(GameController.HumanPlayer.Hits.ToString(), Color.White, GameResources.GameFont("Score"), SCORES_LEFT, HITS_TOP);
+		SwinGame.DrawText(GameController.HumanPlayer.Missed.ToString(), Color.White, GameResources.GameFont("Score"), SCORES_LEFT, SPLASH_TOP);
+		SwinGame.DrawText(GameController.HumanPlayer.Score.ToString(), Color.White, GameResources.GameFont("Score"), SCORES_LEFT, SPLASH_BOTTOM);
 	}
 
 }
